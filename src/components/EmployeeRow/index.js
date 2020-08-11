@@ -16,13 +16,10 @@ function EmployeeRow (props) {
             <strong>Occupation:</strong> {props.occupation}
           </li>
           <li>
-            <strong>Location:</strong> {props.location}
+            <strong>Email:</strong> {props.email}
           </li>
         </ul>
       </div>
-      <span onClick={() => props.removeFriend(props.id)} className="remove">
-        𝘅
-      </span>
     </div>
   );
 }

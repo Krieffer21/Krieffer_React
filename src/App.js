@@ -3,6 +3,7 @@ import EmployeeRow from "./components/EmployeeRow";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import employees from "./employees.json";
+import Search from "./components/Search"
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
@@ -21,15 +22,16 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-        {this.state.employees.map(friend => (
+        <Search></Search>
+
+        {this.state.employees.map(employee => (
           <EmployeeRow
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            id={employee.id}
+            key={employee.id}
+            name={employee.name}
+            image={employee.image}
+            occupation={employee.occupation}
+            email={employee.email}
           />
         ))}
       </Wrapper>
