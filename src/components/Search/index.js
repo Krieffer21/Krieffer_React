@@ -3,7 +3,7 @@ import "./style.css";
 
 function Search (props) {
     return (
-        <form>
+        <form className="col-12">
         <div className="form-group">
           <label htmlFor="search">Search:</label>
           <input
