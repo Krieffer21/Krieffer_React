@@ -3,24 +3,27 @@ import "./style.css";
 
 function EmployeeRow (props) {
   return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Occupation:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Email:</strong> {props.email}
-          </li>
-        </ul>
-      </div>
-    </div>
+
+    <table className="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col-4">Photo</th>
+      <th scope="col-4">Name</th>
+      <th scope="col-4">Occupation</th>
+      <th scope="col-4">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img  alt={props.name} src={props.image} />
+      </td>
+      <td>{props.name}</td>
+      <td>{props.occupation}</td>
+      <td>{props.email}</td>
+    </tr>
+  </tbody>
+</table>
   );
 }
 

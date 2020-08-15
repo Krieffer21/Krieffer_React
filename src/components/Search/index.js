@@ -5,7 +5,7 @@ function Search (props) {
     return (
         <form className="col-12">
         <div className="form-group">
-          <label htmlFor="search">Search:</label>
+          <label htmlFor="search"></label>
           <input
             onChange={props.handleInputChange}
             value={props.search}
@@ -15,9 +15,6 @@ function Search (props) {
             placeholder="Search for an employee"
             id="search"
           />
-          <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
-            Search
-          </button>
         </div>
       </form>  
     );
