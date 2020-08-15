@@ -22,9 +22,21 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-        <Search></Search>
+        <Search></Search>   
+        <table className="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col-4">Photo</th>
+          <th  scope="col-4">Name
+            <button className="dropdown-toggle"></button>
+          </th>
+          <th scope="col-4">Occupation</th>
+          <th scope="col-4">Email</th>
+          </tr>
+      </thead>
 
         {this.state.employees.map(employee => (
+                 
           <EmployeeRow
             id={employee.id}
             key={employee.id}
@@ -34,6 +46,8 @@ class App extends Component {
             email={employee.email}
           />
         ))}
+      </table>
+
       </Wrapper>
     );
   }

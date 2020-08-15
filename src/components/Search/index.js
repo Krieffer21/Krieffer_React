@@ -16,6 +16,7 @@ function Search (props) {
             id="search"
           />
         </div>
+        
       </form>  
     );
 }

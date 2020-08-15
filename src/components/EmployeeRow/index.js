@@ -6,17 +6,6 @@ function EmployeeRow (props) {
 
   return (
 
-    <table className="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col-4">Photo</th>
-      <th  scope="col-4">Name
-      <button className="dropdown-toggle"></button>
-      </th>
-      <th scope="col-4">Occupation</th>
-      <th scope="col-4">Email</th>
-    </tr>
-  </thead>
   <tbody>
     {/* {employee.map(props => {
       return ( */}
@@ -31,7 +20,6 @@ function EmployeeRow (props) {
     {/* )}
     )} */}
   </tbody>
-</table>
   );
 }
 
