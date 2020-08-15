@@ -11,8 +11,14 @@ class App extends Component {
     employees
   };
 
+  originalState = {
+    employees
+  };
+  
   filterName = event => {
-    const employees = this.state.employees.filter(employee => employee.name.includes(event.target.value));
+    
+    const employees = this.originalState.employees.filter(employee => employee.name.includes(event.target.value));
+    
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
@@ -22,7 +28,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-    <Search filterN = {this.filterName}/>  
+    <Search filterName = {this.filterName}/>  
         <table className="table table-striped">
       <thead>
         <tr>
