@@ -11,8 +11,14 @@ class App extends Component {
     employees
   };
 
-  filterName = id => {
-    const employees = this.state.employees.filter(employee => employee.id !== id);
+  originalState = {
+    employees
+  };
+  
+  filterName = event => {
+    
+    const employees = this.originalState.employees.filter(employee => employee.name.includes(event.target.value));
+    
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
@@ -22,9 +28,21 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-        <Search></Search>
+    <Search filterName = {this.filterName}/>  
+        <table className="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col-4">Photo</th>
+          <th  scope="col-4">Name
+            <button className="dropdown-toggle"></button>
+          </th>
+          <th scope="col-4">Occupation</th>
+          <th scope="col-4">Email</th>
+          </tr>
+      </thead>
 
         {this.state.employees.map(employee => (
+                 
           <EmployeeRow
             id={employee.id}
             key={employee.id}
@@ -34,6 +52,8 @@ class App extends Component {
             email={employee.email}
           />
         ))}
+      </table>
+
       </Wrapper>
     );
   }
