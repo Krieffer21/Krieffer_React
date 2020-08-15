@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   filterName = name => {
-    const employees = this.state.employees.filter(employee => employee.name === name);
+    const employees = this.state.employees.filter(employee => employee.name.includes(name));
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-        <Search></Search>   
+    <Search></Search>   
         <table className="table table-striped">
       <thead>
         <tr>
@@ -38,6 +38,7 @@ class App extends Component {
         {this.state.employees.map(employee => (
                  
           <EmployeeRow
+          filterName={this.filterName}
             id={employee.id}
             key={employee.id}
             name={employee.name}
