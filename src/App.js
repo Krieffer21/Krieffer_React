@@ -11,8 +11,8 @@ class App extends Component {
     employees
   };
 
-  filterName = id => {
-    const employees = this.state.employees.filter(employee => employee.id !== id);
+  filterName = name => {
+    const employees = this.state.employees.filter(employee => employee.name === name);
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
