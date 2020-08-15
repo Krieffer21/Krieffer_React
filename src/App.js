@@ -3,7 +3,8 @@ import EmployeeRow from "./components/EmployeeRow";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import employees from "./employees.json";
-import Search from "./components/Search"
+import Search from "./components/Search";
+import Button from "./components/Button"
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
@@ -14,15 +15,27 @@ class App extends Component {
   originalState = {
     employees
   };
-  
+
   filterName = event => {
     
-    const employees = this.originalState.employees.filter(employee => employee.name.includes(event.target.value));
+    const employees = this.originalState.employees.filter(employee => employee.name.toLowerCase().includes(event.target.value.toLowerCase()));
     
     // Set this.state.employees equal to the new employees array
     this.setState({ employees });
   };
 
+  sort = () => {
+    const sortEmployees = employees.sort((a,b) =>{
+     if (a.name < b.name) {
+        return -1;
+     } if (a.name > b.name) {
+       return 1;
+     }
+     return 0;
+    });
+
+    this.setState({sortEmployees});
+  };
   // Map over this.state.employees and render a EmployeeRow component for each friend object
   render() {
     return (
@@ -33,8 +46,8 @@ class App extends Component {
       <thead>
         <tr>
           <th scope="col-4">Photo</th>
-          <th  scope="col-4">Name
-            <button className="dropdown-toggle"></button>
+          <th scope="col-4">Name
+            <Button  sort= {this.sort}></Button>
           </th>
           <th scope="col-4">Occupation</th>
           <th scope="col-4">Email</th>
