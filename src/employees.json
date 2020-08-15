@@ -98,8 +98,8 @@
     {
         "id": 13,
         "name": "Tammy Swanson 1",
-        "image": "IRS Agent",
-        "occupation": "https://vignette.wikia.nocookie.net/parksandrecreation/images/b/b1/Tammy_One.jpg/revision/latest?cb=20111210071208",
+        "image": "https://vignette.wikia.nocookie.net/parksandrecreation/images/b/b1/Tammy_One.jpg/revision/latest?cb=20111210071208",
+        "occupation": "IRS Agent",
         "email": "Swanson1@email.com"
 
     },

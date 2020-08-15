@@ -1,36 +1,37 @@
 import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
+import EmployeeRow from "./components/EmployeeRow";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import friends from "./friends.json";
+import employees from "./employees.json";
+import Search from "./components/Search"
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  // Setting this.state.employees to the employees json array
   state = {
-    friends
+    employees
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+  filterName = id => {
+    const employees = this.state.employees.filter(employee => employee.id !== id);
+    // Set this.state.employees equal to the new employees array
+    this.setState({ employees });
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  // Map over this.state.employees and render a EmployeeRow component for each friend object
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
-        {this.state.friends.map(friend => (
-          <FriendCard
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+        <Title>Employee Directory</Title>
+        <Search></Search>
+
+        {this.state.employees.map(employee => (
+          <EmployeeRow
+            id={employee.id}
+            key={employee.id}
+            name={employee.name}
+            image={employee.image}
+            occupation={employee.occupation}
+            email={employee.email}
           />
         ))}
       </Wrapper>
