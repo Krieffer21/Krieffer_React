@@ -20,7 +20,7 @@ is being called inside of 'Button' the function runs when the user clicks the bu
 ![Methods Called](https://github.com/Krieffer21/Krieffer_React/blob/master/screenshots/filtersCalled.png)
 
 ### Gif's
-  Deployed Link:
+  Deployed Link: https://krieffer21.github.io/Krieffer_React/
   
   The gif below shows the working application. When the user searches for an employee as they type it sorts through the employees. When the user clicks the button by name, the emplyees are sorted in alphabetical order by their name.
 
